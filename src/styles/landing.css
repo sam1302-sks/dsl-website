@@ -1,0 +1,200 @@
+/* REAL PHOTO LANDING PAGE */
+.real-photo-landing {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Real Space Photo Background */
+.space-photo-background {
+  position: absolute;
+  inset: 0;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><radialGradient id="earth" cx="0.3" cy="0.7" r="0.8"><stop offset="0%" stop-color="%23001122"/><stop offset="20%" stop-color="%23002244"/><stop offset="40%" stop-color="%230066cc"/><stop offset="60%" stop-color="%23004488"/><stop offset="80%" stop-color="%23ffaa00"/><stop offset="100%" stop-color="%23ff6600"/></radialGradient><radialGradient id="space" cx="0.5" cy="0.5" r="1"><stop offset="0%" stop-color="%23000011"/><stop offset="100%" stop-color="%23000000"/></radialGradient></defs><rect width="1920" height="1080" fill="url(%23space)"/><ellipse cx="400" cy="900" rx="800" ry="200" fill="url(%23earth)" opacity="0.9"/></svg>');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* For real photo - use this instead */
+.space-photo-background {
+  position: absolute;
+  inset: 0;
+  /* Use real NASA photo */
+  background-image: url('https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=1920&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+/* NASA Logo Header */
+.nasa-logo-header {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nasa-badge {
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 102, 204, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.nasa-title {
+  font-family: 'Exo', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Main Content */
+.main-content-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero-text-section {
+  max-width: 800px;
+  margin-bottom: 3rem;
+}
+
+.main-headline {
+  font-family: 'Exo', sans-serif;
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-weight: 300;
+  color: white;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.main-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.7;
+  font-weight: 400;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Launch Section */
+.launch-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.launch-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: rgba(0, 102, 204, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  color: white;
+  font-family: 'Exo', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.launch-button:hover {
+  background: rgba(0, 102, 204, 1);
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Loading */
+.loading-container {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  font-family: 'Exo', sans-serif;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.loading-circle {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nasa-logo-header {
+    top: 1rem;
+    left: 1rem;
+  }
+  
+  .nasa-title {
+    font-size: 1.2rem;
+  }
+  
+  .main-description {
+    font-size: 1rem;
+  }
+  
+  .launch-button {
+    padding: 0.875rem 2rem;
+    font-size: 0.9rem;
+  }
+}
